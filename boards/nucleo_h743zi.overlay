@@ -1,0 +1,14 @@
+&i2c2 {
+        pinctrl-0 = <&i2c2_scl_pb10 &i2c2_sda_pb11>;
+        status = "okay";
+        clock-frequency = <I2C_BITRATE_FAST>;
+
+        lsm6ds3@6b {
+                compatible = "st,lsm6ds3";
+                reg = <0x6b>;
+                irq-gpios = <&gpiod 11 GPIO_ACTIVE_HIGH>;
+                label = "LSM6DS3";
+        };
+};
+
+
